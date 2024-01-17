@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --black: rgb(73, 73, 73);
+    --offwhite: #fbfbfb;
+    --offwhiteDark: #ebe7e7;
+
+}
+
+* {
+    color: var(--black);
+    font-family: 'Montserrat';
+    font-weight: 400;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
+header {
+    background-color: var(--black);
+    padding: 10px 10px 8px 10px;
+}
+
+header > *  {
+color: var(--offwhite);
+font-size: 12px;
+font-family: 'Montserrat', sans-serif;
+font-weight: 400;
+letter-spacing: 0.1em;
+}
+
+header > nav > *:hover {
+    color: var(--offwhiteDark);
+}
+
+
+body {
+    background-color: var(--offwhite);
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    padding: 50px 0;
+}
+
+h1 {
+    font-size: 45px;
+    font-weight: 300;
+    font-family: 'Montserrat';
+    margin: 20px 0;
+}
+
+h2 {
+  font-size: 25px;
+  font-weight: 600;
+  font-family: 'Montserrat';
+  margin: 20px 0;
+}
+
+
+/* GUESSER GAME */
+
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#btnBox {
+    display: flex;
+    justify-content: space-between;
+}
+    
+#btnBox {
+    display: flex;
+    flex-direction: row;
+}
+
+a {
+    margin: 10px 0;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#imgBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 223px;
+    height: 310px;
+    border-radius: 10px;
+    background-color: var(--offwhite);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px -3px 27px -5px, rgba(0, 0, 0, 0.3) 5px 8px 16px -8px;
+    margin: 20px;
+    outline: 2px solid rgb(196, 193, 191);
+    outline-offset: -10px;
+}
+
+.gameArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+
+    /* border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px -3px 27px -5px, rgba(0, 0, 0, 0.3) 5px 8px 16px -8px; */
+
+}
+
+.btn1 {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--black);
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px -3px 27px -5px, rgba(0, 0, 0, 0.3) 5px 8px 16px -8px;
+    transition: 0.1s all ease-in-out;
+}
+
+.btn1:hover {
+    background-color: var(--offwhiteDark);
+}
+
+
+/* MEMORY GAME */ 
+
+  .wrapper {
+    box-sizing: content-box;
+    width: 70vh;
+    border-radius: 0.6em;
+}
+
+  .game-container {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: grid;
+    gap: 20px;
+  }
+  .stats-container {
+    text-align: right;
+    margin-bottom: 2em;
+  }
+  .stats-container span, .controls-container span {
+    font-weight: 600;
+  }
+  .card-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
+  .card-before,
+  .card-after {
+    position: absolute;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--offwhite);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;    transition: transform 0.7s ease-out;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .card-before:hover,
+  .card-after:hover {
+    background-color: var(--offwhiteDark);
+  }
+
+  .card-before {
+    outline: 2px solid rgb(196, 193, 191);
+    outline-offset: -10px;
+  }
+  
+  .card-after {
+    background-color: #ffffff;
+    transform: rotateY(180deg);
+    /* mix-blend-mode: multiply; */
+  }
+
+  .card-container.flipped .card-before {
+    transform: rotateY(180deg);
+  }
+  .card-container.flipped .card-after {
+    transform: rotateY(0deg);
+  }
+  .controls-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+    .hide {
+    display: none;
+  }
+  #result {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+  }
+
+  .matched > * {
+    background-color: rgb(212, 246, 212);
+  } 
+
+  #threeContainer > * {
+    height: 100%;
+    width: 100%;
+  }
+
